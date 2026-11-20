@@ -1,0 +1,8 @@
+<!doctype html><html lang="ru"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Region Shot · игровая лаборатория</title><link rel="stylesheet" href="demo.css">
+<main><header><span class="tag">REGION SHOT / PROTOTYPE 01</span><h1>Поймай момент.</h1><p>Canvas, WebGL и сторонние iframe — один снимок видимой вкладки.</p></header>
+<section><h2>01 / Движение на Canvas</h2><canvas id="game" width="1000" height="320"></canvas><p>Объекты продолжают двигаться. Выделение выполняется по замороженному кадру.</p></section>
+<section><h2>02 / WebGL в изолированном iframe</h2><iframe title="WebGL игра на другом origin" id="foreignGame" sandbox="allow-scripts"></iframe><p>Sandbox без allow-same-origin создаёт отдельный opaque origin. Внутри — WebGL без preserveDrawingBuffer.</p></section>
+<section><h2>03 / Внешний сайт</h2><iframe title="Внешнее содержимое Wikipedia" src="https://en.wikipedia.org/wiki/Video_game"></iframe><p>Если сайт запрещает встраивание или сеть недоступна, браузер покажет ошибку. Можно заменить src на разрешённый URL игры.</p></section>
+<section><h2>Комментарий</h2><label for="comment">Текст комментария</label><textarea id="comment" placeholder="Напиши комментарий…"></textarea><p>Локальное демо: скриншоты не отправляются на сервер. Превью ниже доступны до обновления страницы.</p><div id="previews"></div></section>
+<section><h2>Скриншоты этой сессии</h2><div id="gallery"></div><p id="galleryStatus" role="status"></p></section></main>
+<script type="module" src="demo.js?v=static-pages-1"></script></html>

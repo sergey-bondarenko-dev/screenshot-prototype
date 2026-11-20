@@ -1,0 +1,5 @@
+<!doctype html><html><meta charset="utf-8"><title>Cross-origin WebGL</title><style>body{margin:0;background:#14243b}canvas{width:100vw;height:100vh;display:block}p{color:white;position:absolute;left:20px;top:8px;font:16px monospace}</style><canvas></canvas><p>WEBGL / CROSS-ORIGIN / LIVE</p><script>
+const c=document.querySelector('canvas'),gl=c.getContext('webgl');
+if(!gl)document.querySelector('p').textContent='WebGL недоступен';
+else{c.width=900;c.height=320;gl.enable(gl.SCISSOR_TEST);function frame(t){gl.scissor(0,0,900,320);gl.clearColor(.05,.1,.2,1);gl.clear(gl.COLOR_BUFFER_BIT);for(let i=0;i<8;i++){gl.scissor((t*.07+i*120)%980-80,80+Math.sin(t/500+i)*65,65,65);gl.clearColor(.3+i*.07,.85,.7,1);gl.clear(gl.COLOR_BUFFER_BIT);}requestAnimationFrame(frame);}requestAnimationFrame(frame);}
+</script></html>
